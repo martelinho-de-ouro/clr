@@ -14,10 +14,12 @@ jobs:
       - name: install cargo llvm cov
         uses: taiki-e/install-action@cargo-llvm-cov
       - name: runs the test with coverage
+        id: the_test
         run: cargo llvm-cov test --fail-under-functions 30
-      - name: failure
-        if: failure()
-        run: exit 1
+      - name: pass_or_fail
+        run: |
+          if [[ ${{ steps.the_test.outcome }} == 0 ]]; then exit 0; else exit 1; fi
+# https://docs.github.com/en/actions/learn-github-actions/contexts#example-usage-of-the-steps-context
 
   formatting:
     name: cargo fmt

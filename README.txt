@@ -1,5 +1,7 @@
 # clr
 
+[ readme '.txt' instead of '.md' just to look 'old school' (⌐■_■) ]
+
 This repository contains everything I found useful-and-practical in the 
 `Command-Line Rust` book + other things.
 

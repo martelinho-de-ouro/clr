@@ -1,6 +1,4 @@
-# ███████
-# █▌cLr▐█
-# ███████
+# cLr
 
 This repository contains everything I found useful-and-practical in the 
 `Command-Line Rust` book + other things.

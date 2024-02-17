@@ -1,7 +1,9 @@
 name: ci
 on:
   push:
+    branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
   test:
@@ -16,8 +18,17 @@ jobs:
       - uses: taiki-e/install-action@cargo-llvm-cov
       - run: |
           set -eEuxo pipefail
-          cargo llvm-cov test --fail-under-functions 80
-
-
-# Using this action: https://github.com/actions-rust-lang/setup-rust-toolchain?tab=readme-ov-file#example-workflow
-# I found here https://github.com/rust-lang/rustup/issues/3409#issuecomment-1890491688
+          cargo llvm-cov test --fail-under-functions 80 | tee cov.txt
+          echo "COVERAGE=$(cat cov.txt)" >> $GITHUB_ENV
+      - name: cov-badge
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{ secrets.THEBADGE }}
+          gistID: d86fe4168b61872f7e63d85ce3c9fea6
+          filename: cov.json
+          label: coverage
+          message: ${{env.COVERAGE}}%
+          valColorRange: ${{env.COVERAGE}}
+          minColorRange: 0
+          maxColorRange: 100
+       

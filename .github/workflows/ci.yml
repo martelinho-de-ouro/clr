@@ -19,10 +19,12 @@ jobs:
         run: cargo clippy
       - name: installs cargo-llvm-cov
         run: cargo install cargo-llvm-cov
-      - name: runs the test with coverage
+      - id: step_test
         run: cargo llvm-cov test --fail-under-functions 80 | tee cov.txt
       - name: coverage %
         run: cat cov.txt | grep "TOTAL" | awk '{print $4}'
+      - name: pass_or_fail
+        run: echo steps.step_test
 
 # Using this action: https://github.com/actions-rust-lang/setup-rust-toolchain?tab=readme-ov-file#example-workflow
 # I found here https://github.com/rust-lang/rustup/issues/3409#issuecomment-1890491688

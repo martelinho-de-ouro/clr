@@ -13,7 +13,7 @@ jobs:
           components: rustfmt
       - uses: actions-rust-lang/rustfmt@v1
       - run: cargo clippy
-      - run: cargo install cargo-llvm-cov
+      - uses: taiki-e/install-action@cargo-llvm-cov
       - run: |
           set -eEuxo pipefail
           cargo llvm-cov test --fail-under-functions 80 | tee cov.txt

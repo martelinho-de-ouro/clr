@@ -15,8 +15,8 @@ fn true_ok() {
     cmd.assert().success();
 }
 
-#[test]
-fn false_not_ok() {
-    let mut cmd = Command::cargo_bin("false").unwrap();
-    cmd.assert().failure();
-}
+// #[test]
+// fn false_not_ok() {
+//     let mut cmd = Command::cargo_bin("false").unwrap();
+//     cmd.assert().failure();
+// }

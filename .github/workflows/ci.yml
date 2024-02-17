@@ -9,28 +9,18 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-      - name: setup rust  
+      - name: setup rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
-      - name: install cargo llvm cov
-        uses: taiki-e/install-action@cargo-llvm-cov
-      - name: runs the test with coverage
-        id: the_test
-        run: cargo llvm-cov test --fail-under-functions 30
-      - name: pass_or_fail
-        run: |
-          if [[ ${{ steps.the_test.outcome }} == 0 ]]; then exit 0; else exit 1; fi
-# https://docs.github.com/en/actions/learn-github-actions/contexts#example-usage-of-the-steps-context
-
-  formatting:
-    name: cargo fmt
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
           components: rustfmt
-      - name: Rustfmt Check
+      - name: rustfmt check
         uses: actions-rust-lang/rustfmt@v1
+      - name: lint
+        run: cargo clippy
+      - name: installs cargo-llvm-cov
+        run: cargo install cargo-llvm-cov
+      - name: runs the test with coverage
+        run: cargo llvm-cov test --fail-under-functions 90
 
 # Using this action: https://github.com/actions-rust-lang/setup-rust-toolchain?tab=readme-ov-file#example-workflow
 # I found here https://github.com/rust-lang/rustup/issues/3409#issuecomment-1890491688

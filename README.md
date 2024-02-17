@@ -9,7 +9,7 @@ This repository contains everything I found useful-and-practical in the
 This uses the following:
 
 * `clap`
-* `assert_cmd` <https://crates.io/crates/assert_cmd> to find the program in the current crate directory for the tests.
+* `assert_cmd` to find the program in the current crate directory for the tests.
 * `actions/checkout@v4`
 * `actions-rust-lang/setup-rust-toolchain@v1` with components `clippy,rustfmt`
 * `cargo-llvm-cov` on CI that will fail based on function coverage
@@ -22,5 +22,5 @@ This uses the following:
     ```
 
 * `schneegans/dynamic-badges-action@v1.7.0` to publish the coverage results to
-a gist and use that gist with shields.io to provide a coverage badge then
+a gist and use that gist with shields.io to provide a coverage badge, then
 no need to publish the coverage results to external services.

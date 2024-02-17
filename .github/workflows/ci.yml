@@ -7,25 +7,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
-      - name: setup rust
-        uses: actions-rust-lang/setup-rust-toolchain@v1
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
           components: rustfmt
-      - name: rustfmt check
-        uses: actions-rust-lang/rustfmt@v1
-      - name: lint
-        run: cargo clippy
-      - name: installs cargo-llvm-cov
-        run: cargo install cargo-llvm-cov
-      - id: step_test
-        run: cargo llvm-cov test --fail-under-functions 80 | tee cov.txt
+      - uses: actions-rust-lang/rustfmt@v1
+      - run: cargo clippy
+      - run: cargo install cargo-llvm-cov
+      - run: |
+          set -eEuxo pipefail
+          cargo llvm-cov test --fail-under-functions 80 | tee cov.txt
       - name: coverage %
         run: cat cov.txt | grep "TOTAL" | awk '{print $4}'
-      - name: pass_or_fail
-        run: |
-          echo ${{steps.step_test.outcome}}
-
 # Using this action: https://github.com/actions-rust-lang/setup-rust-toolchain?tab=readme-ov-file#example-workflow
 # I found here https://github.com/rust-lang/rustup/issues/3409#issuecomment-1890491688

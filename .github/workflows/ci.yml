@@ -16,6 +16,8 @@ jobs:
       - uses: taiki-e/install-action@cargo-llvm-cov
       - run: |
           set -eEuxo pipefail
-          cargo llvm-cov test --fail-under-functions 80 | tee cov.txt
+          cargo llvm-cov test --fail-under-functions 80
+
+
 # Using this action: https://github.com/actions-rust-lang/setup-rust-toolchain?tab=readme-ov-file#example-workflow
 # I found here https://github.com/rust-lang/rustup/issues/3409#issuecomment-1890491688

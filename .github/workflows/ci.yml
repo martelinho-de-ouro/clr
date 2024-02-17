@@ -10,7 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions-rust-lang/setup-rust-toolchain@v1
-      - run: cargo test --all-features
+      - uses: taiki-e/install-action@cargo-llvm-cov
+      - run: cargo llvm-cov test --fail-under-functions 30
 
   formatting:
     name: cargo fmt

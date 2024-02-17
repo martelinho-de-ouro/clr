@@ -19,7 +19,7 @@ jobs:
       - run: |
           set -eEuxo pipefail
           cargo llvm-cov test --fail-under-functions 80 | tee cov.txt
-          echo "COVERAGE=$(cat cov.txt)" >> $GITHUB_ENV
+          echo "COVERAGE=$(cat cov.txt | grep "TOTAL" | awk '{print $4}')" >> $GITHUB_ENV
       - name: cov-badge
         uses: schneegans/dynamic-badges-action@v1.7.0
         with:

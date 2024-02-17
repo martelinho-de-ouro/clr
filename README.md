@@ -10,3 +10,4 @@ This uses the following crates:
 
 * 'clap'
 * 'assert_cmd' <https://crates.io/crates/assert_cmd> to find the program in the current crate directory for the tests.
+* 'cargo-llvm-cov' on CI that will fail based on function coverage

@@ -31,4 +31,4 @@ jobs:
           minColorRange: 50
           maxColorRange: 80
        
-# set -eEuxo pipefail
+# set -eEuxo pipefail (add this before 'cargo llvm-cov test --fail-under-functions 80 | tee cov.txt' line to break the ci)

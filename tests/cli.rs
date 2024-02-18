@@ -1,7 +1,7 @@
 use assert_cmd::Command;
 
-// keep this line commented.
 // use std::process::Command;
+//   use assert_cmd::Command;
 
 #[test]
 fn runs() {

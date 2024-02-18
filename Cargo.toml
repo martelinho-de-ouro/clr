@@ -1,24 +1,6 @@
-[package]
-name = "clr"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-clap = "4.5.1"
-assert_cmd = "2.0.13"
-
-[[bin]]
-name = "false"
-path = "src/bin/false.rs"
-
-[[bin]]
-name = "true"
-path = "src/bin/true.rs"
-
-[[bin]]
-name = "args"
-path = "src/bin/args.rs"
-
-[[bin]]
-name = "clr"
-path = "src/main.rs"
+[workspace]
+members = [
+    "rvrs",
+    "clr",
+]
+resolver = "2"

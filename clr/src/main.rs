@@ -7,5 +7,5 @@ fn main() {
         .about("the description")
         .get_matches(); // tells the 'Command' to parse the arguments.
 
-    println!("Hello, world!!");
+    println!("Hello, world!");
 }

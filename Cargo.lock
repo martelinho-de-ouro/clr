@@ -105,7 +105,7 @@ checksum = "98cc8fbded0c607b7ba9dd60cd98df59af97e84d24e49c8557331cfc26d301ce"
 
 [[package]]
 name = "clr"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "assert_cmd",
  "clap",
@@ -191,6 +191,14 @@ name = "regex-automata"
 version = "0.4.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5bb987efffd3c6d0d8f5f89510bb458559eab11e4f869acb20bf845e016259cd"
+
+[[package]]
+name = "rvrs"
+version = "0.0.1"
+dependencies = [
+ "assert_cmd",
+ "clap",
+]
 
 [[package]]
 name = "serde"

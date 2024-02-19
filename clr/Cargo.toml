@@ -16,9 +16,5 @@ name = "true"
 path = "src/bin/true.rs"
 
 [[bin]]
-name = "args"
-path = "src/bin/args.rs"
-
-[[bin]]
 name = "clr"
 path = "src/main.rs"

@@ -4,7 +4,7 @@ use assert_cmd::Command;
 //   use assert_cmd::Command;
 
 #[test]
-fn test_runs() {
+fn test_clr() {
     let mut cmd = Command::cargo_bin("clr").unwrap();
     cmd.assert().success().stdout("Hello, world!\n");
 }
@@ -20,9 +20,3 @@ fn test_false_not_ok() {
     let mut cmd = Command::cargo_bin("false").unwrap();
     cmd.assert().failure();
 }
-
-// #[test]
-// fn test_args() {
-//     let mut cmd = Command::cargo_bin("args").unwrap();
-//     cmd.assert().success().stdout("Args { inner: [\"target/debug/args\"] }").get_output().;
-// }

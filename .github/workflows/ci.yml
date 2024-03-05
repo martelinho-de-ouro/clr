@@ -9,6 +9,7 @@ jobs:
       - uses: Swatinem/rust-cache@v2
       - uses: taiki-e/install-action@cargo-llvm-cov
       - run: |
+          rustup component add clippy
           cargo clippy
           cargo llvm-cov test | tee cov.txt
           echo "COVERAGE=$(cat cov.txt | grep "TOTAL" | awk '{print $4}' | sed 's/%//g')" >> $GITHUB_ENV

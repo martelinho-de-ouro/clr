@@ -1,8 +1,5 @@
 use assert_cmd::Command;
 
-// use std::process::Command;
-//   use assert_cmd::Command;
-
 #[test]
 fn test_clr() {
     let mut cmd = Command::cargo_bin("clr").unwrap();

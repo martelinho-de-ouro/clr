@@ -25,7 +25,6 @@ fn test_rvrs_reverse_no_nl() {
     let mut cmd = Command::cargo_bin("rvrs").unwrap();
 
     let expected = "ccc bbb aaa";
-    // https://docs.rs/assert_cmd/latest/assert_cmd/#examples
     cmd.arg("aaa")
         .arg("bbb")
         .arg("ccc")

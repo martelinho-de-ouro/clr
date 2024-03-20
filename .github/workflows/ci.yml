@@ -15,7 +15,7 @@ jobs:
           cache-all-crates: "true"
       - uses: taiki-e/install-action@cargo-llvm-cov
       - run: |
-          cargo clippy
+          cargo clippy --all-targets --all-features -- -D warnings -D clippy::unwrap_used
           cargo llvm-cov test | tee cov.txt
           echo "COVERAGE=$(cat cov.txt | grep "TOTAL" | awk '{print $4}' | sed 's/%//g')" >> $GITHUB_ENV
       - name: cov-badge

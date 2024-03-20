@@ -12,6 +12,8 @@ This repository contains everything I found useful-and-practical in the
 
 * `clap`
 * `assert_cmd`
+* `toml`
+* `serde`
 
 ### CI
 

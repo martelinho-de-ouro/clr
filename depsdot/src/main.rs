@@ -1,8 +1,8 @@
 use clap::Parser;
 
 mod loader;
-mod parser;
 mod reader;
+mod transformer;
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
@@ -17,12 +17,22 @@ fn main() {
     if let Some(dir) = cli.dir.as_deref() {
         let tomls = loader::load_cargo_tomls(dir)
             .expect("Error getting Cargo.toml files.");
-        parser::parse_tomls(tomls);
+
+        let json_array = transformer::tomls_two_json_array(tomls);
+        for _j in json_array {
+            // println!("--");
+            // println!("{}", j);
+            // println!("--");
+        }
+        print!("ok");
     } else {
-        println!(
-            "{:?}",
-            loader::load_cargo_tomls(".")
-                .expect("Error getting Cargo.toml files.")
-        );
+        // TODO: fix this duplication - learn how to use pwd with clap
+        // let tomls = loader::load_cargo_tomls(".")
+        //     .expect("Error getting Cargo.toml files.");
+
+        // let json_array = transformer::tomls_two_json_array(tomls);
+        // for j in json_array {
+        //     println!("{}", j);
+        // }
     }
 }

@@ -14,6 +14,7 @@ This repository contains everything I found useful-and-practical in the
 * `assert_cmd`
 * `toml`
 * `serde`
+* `serde_json`
 
 ### CI
 

@@ -9,6 +9,6 @@ fn test_depsdot_failure() {
 #[test]
 fn test_depsdot() {
     let mut cmd = Command::cargo_bin("depsdot").unwrap();
-    let expected = "[\"./Cargo.toml\"]\n";
-    cmd.assert().success().stdout(expected);
+    let expected = "ok";
+    cmd.arg(".").assert().success().stdout(expected);
 }

@@ -30,4 +30,3 @@ This repository contains everything I found useful-and-practical in the
 
 * `schneegans/dynamic-badges-action@v1.7.0` to publish the coverage results to a `gist` and use that gist with `shields.io` to provide a coverage badge. (thanks to: <https://bitspittle.dev/blog/2022/kover-badge>)
 
-ABC

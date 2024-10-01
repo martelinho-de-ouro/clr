@@ -1,3 +1,5 @@
+use std::fs;
+
 use assert_cmd::Command;
 
 #[test]
@@ -13,6 +15,14 @@ fn test_clr_again() {
     assert!(out.status.success());
     let stdout = String::from_utf8(out.stdout).expect("invalid utf-8");
     assert_eq!(stdout, "Hello, world!\n");
+}
+
+#[test]
+fn test_clr_again_with_file() {
+    let file = "tests/expected/out.txt";
+    let expected = fs::read_to_string(file).unwrap();
+    let mut cmd = Command::cargo_bin("clr").unwrap();
+    cmd.assert().success().stdout(expected);
 }
 
 #[test]

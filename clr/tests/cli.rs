@@ -1,11 +1,12 @@
+use anyhow::Result;
+use assert_cmd::Command;
 use std::fs;
 
-use assert_cmd::Command;
-
 #[test]
-fn test_clr() {
+fn test_clr() -> Result<()> {
     let mut cmd = Command::cargo_bin("clr").unwrap();
     cmd.assert().success().stdout("Hello, world!\n");
+    Ok(())
 }
 
 #[test]
@@ -18,11 +19,15 @@ fn test_clr_again() {
 }
 
 #[test]
-fn test_clr_again_with_file() {
+fn test_clr_again_with_file() -> Result<()> {
     let file = "tests/expected/out.txt";
-    let expected = fs::read_to_string(file).unwrap();
-    let mut cmd = Command::cargo_bin("clr").unwrap();
-    cmd.assert().success().stdout(expected);
+    let expected = fs::read_to_string(file)?;
+    let mut cmd = Command::cargo_bin("clr")?;
+    let out = cmd.output()?;
+    let stdout = String::from_utf8(out.stdout).expect("invalid utf-8");
+    assert_eq!(stdout, expected);
+
+    Ok(())
 }
 
 #[test]

@@ -3,10 +3,8 @@ name = "clr"
 version.workspace = true
 edition.workspace = true
 
-[dependencies]
-clap = { workspace = true }
-
 [dev-dependencies]
+anyhow = { workspace = true }
 assert_cmd = { workspace = true }
 
 [[bin]]

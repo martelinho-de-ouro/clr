@@ -7,5 +7,6 @@ edition.workspace = true
 clap = { workspace = true, features = ["cargo"] }
 
 [dev-dependencies]
+anyhow = { workspace = true }
 assert_cmd = { workspace = true }
 predicates = { workspace = true }

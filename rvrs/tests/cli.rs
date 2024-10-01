@@ -1,9 +1,18 @@
 use assert_cmd::Command;
+use predicates::prelude::*;
 
 #[test]
 fn test_rvrs_failure() {
     let mut cmd = Command::cargo_bin("rvrs").unwrap();
     cmd.assert().failure();
+}
+
+#[test]
+fn test_error_no_args() {
+    let mut cmd = Command::cargo_bin("rvrs").unwrap();
+    cmd.assert()
+        .failure()
+        .stderr(predicate::str::contains("Usage"));
 }
 
 #[test]

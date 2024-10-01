@@ -2,9 +2,11 @@
 members = ["rvrs", "clr"]
 resolver = "2"
 
+[workspace.package]
+version = "0.0.1"
+edition = "2021"
+
 [workspace.dependencies]
-assert_cmd = "2.0.13"
-clap = "4.5.1"
-serde = "1.0"
-toml = "0.8"
-serde_json = "1"
+assert_cmd = "2"
+clap = "4"
+predicates = "3"

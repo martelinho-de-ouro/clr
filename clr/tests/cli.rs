@@ -31,6 +31,16 @@ fn test_clr_again_with_file() -> Result<()> {
 }
 
 #[test]
+fn test_clr_again_with_file_without_anyhow() {
+    let file = "tests/expected/out.txt";
+    let expected = fs::read_to_string(file).unwrap();
+    let mut cmd = Command::cargo_bin("clr").unwrap();
+    let out = cmd.output().unwrap();
+    let stdout = String::from_utf8(out.stdout).expect("invalid utf-8");
+    assert_eq!(stdout, expected);
+}
+
+#[test]
 fn test_true_ok() {
     let mut cmd = Command::cargo_bin("true").unwrap();
     cmd.assert().success();

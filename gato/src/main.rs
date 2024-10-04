@@ -28,6 +28,7 @@ fn open(file: &str) -> Result<Box<dyn BufRead>> {
 fn cat_being_weird(line: &str) -> String {
     let mut new_line = String::new();
     for w in line.split_whitespace() {
+        new_line.push(' ');
         if let Some(emoji) = emojis::get_by_shortcode(w) {
             new_line.push_str(emoji.as_str());
         } else {

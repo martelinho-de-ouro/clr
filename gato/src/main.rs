@@ -25,13 +25,27 @@ fn open(file: &str) -> Result<Box<dyn BufRead>> {
     }
 }
 
+fn cat_being_weird(line: &str) -> String {
+    let mut new_line = String::new();
+    for w in line.split_whitespace() {
+        if let Some(emoji) = emojis::get_by_shortcode(w) {
+            new_line.push_str(emoji.as_str());
+        } else {
+            new_line.push_str(w);
+        }
+    }
+
+    new_line.to_string()
+}
+
 fn run(args: Args) -> Result<()> {
     match open(&args.file) {
         Err(err) => eprintln!("Failed to open {0}: {err}", args.file),
         Ok(file) => {
             for line in file.lines() {
                 let l = line?;
-                println!("☺️ {l}");
+                let new_line = cat_being_weird(&l);
+                println!("{new_line}");
             }
         }
     }

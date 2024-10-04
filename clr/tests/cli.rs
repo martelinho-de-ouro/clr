@@ -3,14 +3,14 @@ use assert_cmd::Command;
 use std::fs;
 
 #[test]
-fn test_clr() -> Result<()> {
+fn clr() -> Result<()> {
     let mut cmd = Command::cargo_bin("clr").unwrap();
     cmd.assert().success().stdout("Hello, world!\n");
     Ok(())
 }
 
 #[test]
-fn test_clr_again() {
+fn clr_again() {
     let mut cmd = Command::cargo_bin("clr").unwrap();
     let out = cmd.output().expect("fail");
     assert!(out.status.success());
@@ -19,7 +19,7 @@ fn test_clr_again() {
 }
 
 #[test]
-fn test_clr_again_with_file() -> Result<()> {
+fn clr_again_with_file() -> Result<()> {
     let file = "tests/expected/out.txt";
     let expected = fs::read_to_string(file)?;
     let mut cmd = Command::cargo_bin("clr")?;
@@ -31,7 +31,7 @@ fn test_clr_again_with_file() -> Result<()> {
 }
 
 #[test]
-fn test_clr_again_with_file_without_anyhow() {
+fn clr_again_with_file_without_anyhow() {
     let file = "tests/expected/out.txt";
     let expected = fs::read_to_string(file).unwrap();
     let mut cmd = Command::cargo_bin("clr").unwrap();
@@ -41,13 +41,13 @@ fn test_clr_again_with_file_without_anyhow() {
 }
 
 #[test]
-fn test_true_ok() {
+fn true_ok() {
     let mut cmd = Command::cargo_bin("true").unwrap();
     cmd.assert().success();
 }
 
 #[test]
-fn test_false_not_ok() {
+fn false_not_ok() {
     let mut cmd = Command::cargo_bin("false").unwrap();
     cmd.assert().failure();
 }

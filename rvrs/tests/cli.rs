@@ -2,19 +2,19 @@ use assert_cmd::Command;
 use predicates::str::*;
 
 #[test]
-fn test_rvrs_failure() {
+fn rvrs_failure() {
     let mut cmd = Command::cargo_bin("rvrs").unwrap();
     cmd.assert().failure();
 }
 
 #[test]
-fn test_error_no_args() {
+fn error_no_args() {
     let mut cmd = Command::cargo_bin("rvrs").unwrap();
     cmd.assert().failure().stderr(contains("Usage"));
 }
 
 #[test]
-fn test_rvrs_reverse() {
+fn rvrs_reverse() {
     let mut cmd = Command::cargo_bin("rvrs").unwrap();
 
     let expected = "ccc bbb aaa\n";
@@ -28,7 +28,7 @@ fn test_rvrs_reverse() {
 }
 
 #[test]
-fn test_rvrs_reverse_no_nl() {
+fn rvrs_reverse_no_new_line() {
     let mut cmd = Command::cargo_bin("rvrs").unwrap();
 
     let expected = "ccc bbb aaa";

@@ -14,6 +14,7 @@ This repository contains everything I found useful-and-practical in the
 * `assert_cmd`
 * `predicates`
 * `anyhow`
+* `pretty_assertions`
 
 ### CI
 

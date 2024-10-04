@@ -8,6 +8,7 @@ edition = "2021"
 
 [workspace.dependencies]
 anyhow = "1"
+pretty_assertions = "1.4"
 assert_cmd = "2"
-clap = "4"
 predicates = "3"
+clap = "4"

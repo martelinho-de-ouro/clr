@@ -6,6 +6,7 @@ edition.workspace = true
 [dev-dependencies]
 anyhow = { workspace = true }
 assert_cmd = { workspace = true }
+pretty_assertions = { workspace = true }
 
 [[bin]]
 name = "false"

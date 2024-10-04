@@ -6,7 +6,7 @@ use clap::Parser;
 struct Args {
     /// file - it accepts only one file
     #[arg(value_name = "FILE", default_value = "-")]
-    files: String,
+    file: String,
 }
 
 fn main() {

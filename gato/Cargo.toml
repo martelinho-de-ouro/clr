@@ -4,9 +4,9 @@ version.workspace = true
 edition.workspace = true
 
 [dependencies]
-clap = { workspace = true, features = ["cargo"] }
+anyhow = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
 
 [dev-dependencies]
-anyhow = { workspace = true }
 assert_cmd = { workspace = true }
 predicates = { workspace = true }

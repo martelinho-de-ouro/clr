@@ -28,7 +28,7 @@ This repository contains everything I found useful and practical in the `Command
     ```
 * `schneegans/dynamic-badges-action@v1.7.0` to publish the coverage results to a `gist` and use that gist with `shields.io` to provide a coverage badge. (thanks to: <https://bitspittle.dev/blog/2022/kover-badge>)
 
-## Programs
+## Commands 
 
 ### clr
 
@@ -41,3 +41,13 @@ Does nothing, although it contains tests
 An echo command that shows in reverse 
 
 ![rvrs](img/rvrs.png)
+
+### gato 
+
+A cat command that messes up the output with emojis
+
+![gato](img/gato.png)
+
+
+
+

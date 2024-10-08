@@ -1,7 +1,7 @@
 use anyhow::Result;
 use clap::Parser;
-use std::fs::File;
-use std::io::{self, BufRead, BufReader};
+use common::open;
+use std::io::BufRead;
 use std::process;
 
 #[derive(Debug, Parser)]
@@ -9,20 +9,8 @@ use std::process;
 /// Weirdo version of cat command
 struct Args {
     /// file - it accepts only one file
-    #[arg(value_name = "FILE", default_value = "~/.gitconfig")]
+    #[arg(value_name = "FILE", default_value = "-")]
     file: String,
-}
-
-// dyn keyword here says that the return type's trait is dynamically
-// dispatched allowing to abstract the idea of input source in case
-// the source implements the trait BufRead.
-// The return needs to be boxed because the compiler has no idea
-// about the size of of the thing that will be read at compile time.
-fn open(file: &str) -> Result<Box<dyn BufRead>> {
-    match file {
-        "-" => Ok(Box::new(BufReader::new(io::stdin()))),
-        _ => Ok(Box::new(BufReader::new(File::open(file)?))),
-    }
 }
 
 fn cat_being_weird(line: &str) -> String {

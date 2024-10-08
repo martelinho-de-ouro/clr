@@ -5,29 +5,6 @@
 
 This repository contains everything I found useful and practical in the `Command-Line Rust` book + other things.
 
-## This uses the following
-
-### Dependencies
-
-* `clap`
-* `assert_cmd`
-* `predicates`
-* `anyhow`
-* `pretty_assertions`
-
-### CI
-
-* `actions/checkout@v4`
-* `Swatinem/rust-cache@v2`
-* `taiki-e/install-action@cargo-llvm-cov`
-  * Local development workflow use the report to navigate on html and see uncovered code:
-
-    ```sh
-    cargo install cargo-llvm-cov
-    cargo llvm-cov --html --open
-    ```
-* `schneegans/dynamic-badges-action@v1.7.0` to publish the coverage results to a `gist` and use that gist with `shields.io` to provide a coverage badge. (thanks to: <https://bitspittle.dev/blog/2022/kover-badge>)
-
 ## Commands 
 
 ### clr
@@ -48,6 +25,9 @@ A cat command that messes up the output with emojis
 
 ![gato](img/gato.png)
 
+### bobblehead 
 
+A head command with big head 
 
+![bobblehead](img/bobblehead.png)
 

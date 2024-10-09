@@ -1,0 +1,3 @@
+command line rust
+
+learning some rust writing commands

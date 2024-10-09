@@ -1,10 +1,11 @@
 use assert_cmd::Command;
+use predicates::str::*;
 
 const COMMAND: &str = "bobblehead";
 
 #[test]
-#[ignore]
-fn rvrs_failure() {
+fn bobblehead() {
     let mut cmd = Command::cargo_bin(COMMAND).unwrap();
-    cmd.assert().failure();
+    cmd.arg("bh.txt").assert().stdout(contains("_"));
 }
+

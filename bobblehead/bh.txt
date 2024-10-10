@@ -1,3 +1,12 @@
-command line rust
-
-learning some rust writing commands
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Duis tristique vel odio vitae scelerisque. Pellentesque finibus malesuada mollis.
+Ut fermentum tortor in consequat cursus. Proin aliquam, metus in tincidunt interdum,
+purus urna vestibulum tortor, sed venenatis purus augue quis ipsum.
+Integer accumsan feugiat mi, at ullamcorper turpis tincidunt non.
+Etiam vel enim tempus, auctor nisi a, fermentum odio. Aliquam vulputate dolor nec
+massa dapibus, ut luctus mauris hendrerit. Etiam feugiat semper ex non tincidunt.
+Nunc velit lorem, lacinia blandit dolor quis, commodo mollis lectus. Vestibulum posuere,
+nunc vitae tristique auctor, nibh ipsum semper ipsum, quis pulvinar augue ligula ut ipsum.
+Praesent rhoncus tristique nibh, nec sodales libero auctor a. Nulla facilisi.
+Aliquam iaculis interdum risus eget ultricies. Fusce sit amet tellus ac leo
+vulputate commodo nec in quam. Cras sit amet tempus mi. Nunc quis euismod enim.

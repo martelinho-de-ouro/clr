@@ -13,6 +13,9 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           cache-all-crates: "true"
+      - name: Install platform deps
+        run: |
+          sudo apt install libasound2-dev
       - uses: taiki-e/install-action@cargo-llvm-cov
       - run: |
           cargo clippy --all-targets --all-features -- -D warnings -D clippy::unwrap_used -D clippy::expect_used

@@ -1,5 +1,5 @@
 [workspace]
-members = ["clr", "rvrs", "gato", "common", "bobblehead"]
+members = ["clr", "rvrs", "gato", "common", "bobblehead", "toilet"]
 resolver = "2"
 
 [workspace.package]
@@ -14,6 +14,6 @@ emojis = "0.6"
 figleter = "0.2.2"
 predicates = "3"
 pretty_assertions = "1.4"
-rand = "0.8"
-common = { path = "common" }
+rodio = "0.19"
 
+common = { path = "common" }

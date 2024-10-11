@@ -30,3 +30,9 @@ A cat command that messes up the output with emojis
 A head command with big head
 
 ![bobblehead](img/bobblehead.png)
+
+### toilet
+
+A wc command that flushes depending on the amount of text
+
+> Fedora: sudo dnf install alsa-lib-devel
